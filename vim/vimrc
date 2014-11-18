@@ -2,54 +2,57 @@ set nocompatible " be iMproved
 
 " For vundle
 filetype off
-set rtp+=~/rcfiles/vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/rcfiles/vim/bundle/Vundle.vim
+call vundle#begin('~/rcfiles/vim/plugins')
 
 " Dependencies of snipmate
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "honza/vim-snippets"
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+" Snippets for our use :)
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
 
 " Good looking bottom :)
-Bundle 'bling/vim-airline'
+Plugin 'bling/vim-airline'
 " Git tools
-Bundle 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 " Dependency managment
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle.vim'
 " Rails :/
-Bundle 'tpope/vim-rails.git'
-" Snippets for our use :)
-Bundle 'garbas/vim-snipmate'
+Plugin 'tpope/vim-rails.git'
 " Commenting and uncommenting stuff
-Bundle 'tomtom/tcomment_vim'
+Plugin 'tomtom/tcomment_vim'
 " Beutiful solarized theme
-Bundle 'altercation/vim-colors-solarized'
+Plugin 'altercation/vim-colors-solarized'
 " Molokai theme
-Bundle 'tomasr/molokai'
+Plugin 'tomasr/molokai'
 " Vim Ruby
-Bundle 'vim-ruby/vim-ruby'
+Plugin 'vim-ruby/vim-ruby'
 " Surround your code :)
-Bundle 'tpope/vim-surround'
+Plugin 'tpope/vim-surround'
 " Every one should have a pair (Autogenerate pairs for "{[( )
-Bundle 'jiangmiao/auto-pairs'
+Plugin 'jiangmiao/auto-pairs'
 " Tab completions
-Bundle 'ervandew/supertab'
+Plugin 'ervandew/supertab'
 " CoffeeScript syntax
-Bundle 'kchmck/vim-coffee-script'
+Plugin 'kchmck/vim-coffee-script'
 " Fuzzu finder for vim (CTRL+P)
-Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 " Ruby Tests
-Bundle 'skalnik/vim-vroom'
+Plugin 'skalnik/vim-vroom'
 " Easy motion for easy motion
-Bundle 'Lokaltog/vim-easymotion'
+Plugin 'Lokaltog/vim-easymotion'
 " Running tests in tmux session
-Bundle 'tpope/vim-dispatch'
+Plugin 'tpope/vim-dispatch'
 " Gist
-Bundle 'mattn/webapi-vim'
-Bundle 'mattn/gist-vim'
-Bundle 'danro/rename.vim'
+Plugin 'mattn/webapi-vim'
+Plugin 'mattn/gist-vim'
+Plugin 'danro/rename.vim'
 
-Bundle 'nono/vim-handlebars'
+Plugin 'nono/vim-handlebars'
+
+call vundle#end()
+filetype plugin indent on
 
 set grepprg=ack-grep " Set ACK as a default grep
 set tags=./tags; " Set tags directory
