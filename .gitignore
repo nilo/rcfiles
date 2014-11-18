@@ -1,3 +1,5 @@
 /vim/undo
 /vim/backup
 /vim/swap
+/vim/plugins
+/home/nilo/rcfiles/vim/bundle/Vundle.vim
