@@ -1,5 +1,6 @@
 /vim/undo
 /vim/backup
 /vim/swap
-/vim/plugins/*
+/vim/plugins
 /vim/bundle/Vundle.vim
+/vim/bundle/vundle
