@@ -2,5 +2,5 @@
 /vim/backup
 /vim/swap
 /vim/plugins
-/vim/bundle/Vundle.vim
-/vim/bundle/vundle
+/vim/bundle/Vundle.vim/
+/vim/bundle/vundle/
