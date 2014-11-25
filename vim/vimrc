@@ -1,64 +1,55 @@
-set nocompatible " be iMproved
+"Setting Python Path (If you are not using ArchLinux you may don't need this)
+let $PYTHONPATH='/usr/lib/python3.4/site-packages'
+
+set nocompatible " be iMprove8d
 
 " For vundle
 filetype off
 set rtp+=~/rcfiles/vim/bundle/Vundle.vim
 call vundle#begin('~/rcfiles/vim/plugins')
-
-" Dependencies of snipmate
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-" Snippets for our use :)
-Plugin 'garbas/vim-snipmate'
+"Snippets
+" Track the engine.
+Plugin 'SirVer/ultisnips'
+" Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
-
+"Code Complete
+Plugin 'Valloric/YouCompleteMe'
 " Good looking bottom :)
 Plugin 'bling/vim-airline'
 " Git tools
 Plugin 'tpope/vim-fugitive'
 " Dependency managment
 Plugin 'gmarik/vundle.vim'
-" Rails :/
+" Rails 
 Plugin 'tpope/vim-rails.git'
 " Commenting and uncommenting stuff
 Plugin 'tomtom/tcomment_vim'
-" Beutiful solarized theme
+" " Beutiful solarized theme
 Plugin 'altercation/vim-colors-solarized'
-" Molokai theme
+" " Molokai theme
 Plugin 'tomasr/molokai'
-" Vim Ruby
+" " Vim Ruby
 Plugin 'vim-ruby/vim-ruby'
 " Surround your code :)
 Plugin 'tpope/vim-surround'
 " Every one should have a pair (Autogenerate pairs for "{[( )
 Plugin 'jiangmiao/auto-pairs'
-" Tab completions
-Plugin 'ervandew/supertab'
-" CoffeeScript syntax
-Plugin 'kchmck/vim-coffee-script'
 " Fuzzu finder for vim (CTRL+P)
 Plugin 'kien/ctrlp.vim'
-" Ruby Tests
-Plugin 'skalnik/vim-vroom'
-" Easy motion for easy motion
-Plugin 'Lokaltog/vim-easymotion'
 " Running tests in tmux session
 Plugin 'tpope/vim-dispatch'
-" Gist
+" Gist - (paste online text)
 Plugin 'mattn/webapi-vim'
 Plugin 'mattn/gist-vim'
 Plugin 'danro/rename.vim'
-
-Plugin 'nono/vim-handlebars'
+"Mustache and Handlebars - html views 
+Plugin 'mustache/vim-mustache-handlebars'
 
 call vundle#end()
-filetype plugin indent on
 
 set grepprg=ack-grep " Set ACK as a default grep
 set tags=./tags; " Set tags directory
 set autoindent " Auto indention should be on
-
-filetype plugin indent on
 
 " Ruby stuff: Thanks Ben :)
 " ================
@@ -103,10 +94,8 @@ nmap <Leader><CR> :nohlsearch<cr>
 map <leader>p :bp<CR> " \p previous buffer
 map <leader>n :bn<CR> " \n next buffer
 map <leader>d :bd<CR> " \d delete buffer
-
-let g:vroom_map_keys = 0
-let g:vroom_use_dispatch = 1
-let g:vroom_use_zeus = 1
+set confirm
+set hidden
 
 map <Leader>c :call vroom#RunTestFile()<CR>
 map <Leader>s :call vroom#RunNearestTest()<CR>
@@ -115,8 +104,9 @@ map <leader>r :r<cr> " \t to jump to related file
 map <leader>E :Explore .<cr> " \E to open file explorer in root
 map <leader>e :Explore<cr> " \e to open file explorer in current dir
 
-let g:airline_theme='luna'
-let g:airline_powerline_fonts=1
+let g:airline_theme='molokai'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 set laststatus=2
 
 inoremap  <Up>     <NOP>
@@ -188,3 +178,11 @@ nnoremap <F12> :%s/:\([^ ]*\)\(\s*\)=>/\1:/g<return>
 " Increment numbers
 nnoremap <A-a> <C-a>
 nnoremap <A-x> <C-x>
+" Trigger configuration. Do not use <tab> if you use
+" https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+"
+" " If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
