@@ -5,4 +5,4 @@ exit 1  # fail
 fi
 ln -sf "${MY_PATH}/tmux.conf" ~/.tmux.conf
 ln -sf "${MY_PATH}/vim/vimrc" ~/.vimrc
-#ln -sf "${MY_PATH}/zshrc" ~/.zshrc
+ln -sf "${MY_PATH}/zshrc" ~/.zshrc
