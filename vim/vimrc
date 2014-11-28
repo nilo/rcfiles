@@ -1,7 +1,7 @@
 "Setting Python Path (If you are not using ArchLinux you may don't need this)
 let $PYTHONPATH='/usr/lib/python3.4/site-packages'
 
-set nocompatible " be iMprove8d
+set nocompatible 
 
 " For vundle
 filetype off
@@ -13,7 +13,7 @@ Plugin 'SirVer/ultisnips'
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
 "Code Complete
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'Shougo/neocomplete.vim'
 " Good looking bottom :)
 Plugin 'bling/vim-airline'
 " Git tools
@@ -46,6 +46,9 @@ Plugin 'danro/rename.vim'
 Plugin 'mustache/vim-mustache-handlebars'
 
 call vundle#end()
+
+" Map leader key
+let mapleader = ","
 
 set grepprg=ack-grep " Set ACK as a default grep
 set tags=./tags; " Set tags directory
@@ -97,18 +100,13 @@ map <leader>d :bd<CR> " \d delete buffer
 set confirm
 set hidden
 
-map <Leader>c :call vroom#RunTestFile()<CR>
-map <Leader>s :call vroom#RunNearestTest()<CR>
-map <leader>t :A<CR> " \t to jump to test file
-map <leader>r :r<cr> " \t to jump to related file
-map <leader>E :Explore .<cr> " \E to open file explorer in root
-map <leader>e :Explore<cr> " \e to open file explorer in current dir
-
+" Theme Configuration
 let g:airline_theme='molokai'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 set laststatus=2
 
+" Remove arrows 
 inoremap  <Up>     <NOP>
 inoremap  <Down>   <NOP>
 inoremap  <Left>   <NOP>
@@ -119,7 +117,7 @@ noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
 
 " Removing escape
-ino jj <esc>
+ino jj <esc> 
 cno jj <c-c>
 vno v <esc>
 
@@ -127,7 +125,7 @@ vno v <esc>
 set cursorline
 " Highlight active column
 set cuc cul"
-
+set colorcolumn=80
 " Tab completion
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
@@ -172,12 +170,13 @@ if exists("+undofile")
 endif
 
 " Ruby hash syntax conversion
-noremap <F12>
-nnoremap <F12> :%s/:\([^ ]*\)\(\s*\)=>/\1:/g<return>
+" noremap <F12>
+noremap <F12> :%s/:\([^ ]*\)\(\s*\)=>/\1:/g<return>
 
 " Increment numbers
 nnoremap <A-a> <C-a>
 nnoremap <A-x> <C-x>
+
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -186,3 +185,11 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 "
 " " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" " Use smartcase.
+ let g:neocomplete#enable_smart_case = 1"
+let g:neocomplete#max_list = 10
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
