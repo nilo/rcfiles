@@ -22,6 +22,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'gmarik/vundle.vim'
 " Rails 
 Plugin 'tpope/vim-rails.git'
+" CoffeeScript
+Plugin 'kchmck/vim-coffee-script'
 " Commenting and uncommenting stuff
 Plugin 'tomtom/tcomment_vim'
 " " Beutiful solarized theme

@@ -86,3 +86,10 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/java/bin:/opt/java/db/
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+#export PATH="$PATH:$HOME/.rvm/gems/ruby-2.1.2/bin"
+export GEM_HOME=$(ruby -e 'print Gem.user_dir')
+PATH="`ruby -e 'print Gem.user_dir'`/bin:$PATH"
+
+#Fix grep options warning message
+alias grep="/usr/bin/grep $GREP_OPTIONS"
+unset GREP_OPTIONS
