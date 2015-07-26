@@ -4,6 +4,9 @@ export ZSH=$HOME/.oh-my-zsh
 #Alias to start tmux with right colors in archlinux
 alias tmux="TERM=screen-256color-bce tmux"
 
+# Alias default terminator size
+alias terminator="terminator --geometry=900x600+1080+0"
+
 #Alias vi to vim
 alias vi="vim"
 
@@ -91,5 +94,5 @@ export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 PATH="`ruby -e 'print Gem.user_dir'`/bin:$PATH"
 
 #Fix grep options warning message
-alias grep="/usr/bin/grep $GREP_OPTIONS"
-unset GREP_OPTIONS
+#alias grep="/usr/bin/grep $GREP_OPTIONS"
+#unset GREP_OPTIONS

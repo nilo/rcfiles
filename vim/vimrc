@@ -102,6 +102,9 @@ map <leader>d :bd<CR> " \d delete buffer
 set confirm
 set hidden
 
+" Copy Paste GVim - <leader>c
+set clipboard=unnamedplus
+
 " Theme Configuration
 let g:airline_theme='molokai'
 let g:airline#extensions#tabline#enabled = 1
