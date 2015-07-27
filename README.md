@@ -28,9 +28,9 @@ $ cd ~/rcfiles
 $ sh install.sh
 ```
 
-That's it! Now you need to do some [post install](###markdown-header-post-install).
+That's it! Now you need to do some [after install](#markdown-header-After-install).
 
-### Post install
+### After install
 
 #### Vim:
 
