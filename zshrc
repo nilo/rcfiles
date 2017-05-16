@@ -1,14 +1,20 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
+#Proxy
+#export http_proxy='http://192.168.0.3:3128'
+
 #Alias to start tmux with right colors in archlinux
 alias tmux="TERM=screen-256color-bce tmux"
 
 # Alias default terminator size
-alias terminator="terminator --geometry=900x600+1080+0"
+alias terminator="terminator --geometry=900x600+1080+0 -e 'tmux -2'"
 
 #Alias vi to vim
 alias vi="vim"
+
+#Set editor
+export EDITOR='vim'
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -54,13 +60,13 @@ ZSH_THEME="gentoo"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(archlinux git gitignore ruby bundler gem rails rake rvm thor repo colored-man colorize command-not-found cp extract safe-paste vundle )
+plugins=(archlinux git gitignore ruby bundler gem rails rake rvm thor repo colored-man colorize command-not-found cp extract safe-paste vundle aws )
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/java/bin:/opt/java/db/bin:/opt/java/jre/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/nilo/.rvm/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/java/bin:/opt/java/db/bin:/opt/java/jre/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -88,10 +94,10 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/java/bin:/opt/java/db/
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+#export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 #export PATH="$PATH:$HOME/.rvm/gems/ruby-2.1.2/bin"
-export GEM_HOME=$(ruby -e 'print Gem.user_dir')
-PATH="`ruby -e 'print Gem.user_dir'`/bin:$PATH"
+#export GEM_HOME=$(ruby -e 'print Gem.user_dir')
+#PATH="`ruby -e 'print Gem.user_dir'`/bin:$PATH"
 
 #Fix grep options warning message
 #alias grep="/usr/bin/grep $GREP_OPTIONS"

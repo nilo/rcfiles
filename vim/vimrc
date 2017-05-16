@@ -1,5 +1,5 @@
 "Setting Python Path (If you are not using ArchLinux you may don't need this)
-let $PYTHONPATH='/usr/lib/python3.4/site-packages'
+let $PYTHONPATH='/usr/lib/python3.6/site-packages'
 
 set nocompatible 
 
@@ -30,6 +30,7 @@ Plugin 'tomtom/tcomment_vim'
 Plugin 'altercation/vim-colors-solarized'
 " " Molokai theme
 Plugin 'tomasr/molokai'
+Plugin 'vim-airline/vim-airline-themes'
 " " Vim Ruby
 Plugin 'vim-ruby/vim-ruby'
 " Surround your code :)
@@ -46,7 +47,12 @@ Plugin 'mattn/gist-vim'
 Plugin 'danro/rename.vim'
 "Mustache and Handlebars - html views 
 Plugin 'mustache/vim-mustache-handlebars'
-
+"Terraform syntax
+Plugin 'hashivim/vim-terraform'
+" JavaScript syntax
+Plugin 'pangloss/vim-javascript'
+" Json Syntax
+ "Plugin 'elzr/vim-json'
 call vundle#end()
 
 " Map leader key
@@ -98,7 +104,7 @@ nmap <Leader><CR> :nohlsearch<cr>
 " Buffer switching
 map <leader>p :bp<CR> " \p previous buffer
 map <leader>n :bn<CR> " \n next buffer
-map <leader>d :bd<CR> " \d delete buffer
+map <leader>d :bp<bar>sp<bar>bn<bar>bd<CR> " \d delete buffer but not splits
 set confirm
 set hidden
 
@@ -198,3 +204,9 @@ let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#max_list = 10
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" Terraform identation
+let g:terraform_align=1
+
+" JavaScript Syntax
+let g:javascript_plugin_jsdoc = 1
